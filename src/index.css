@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-base: #09090b;       /* zinc-950 - page background */
+  --color-surface: #18181b;    /* zinc-900 - cards, navbar */
+  --color-elevated: #27272a;   /* zinc-800 - inputs, hover states */
+  --color-subtle: #3f3f46;     /* zinc-700 - borders on hover */
+
+  /* Borders */
+  --color-border: #27272a;     /* zinc-800 */
+
+  /* Text */
+  --color-primary: #f4f4f5;    /* zinc-100 - main text */
+  --color-secondary: #a1a1aa;  /* zinc-400 - secondary text */
+  --color-muted: #71717a;      /* zinc-500 - placeholders, hints */
+  --color-faint: #52525b;      /* zinc-600 - very subtle text */
+
+  /* Accent - for buttons and highlights */
+  --color-accent: #f4f4f5;     /* zinc-100 */
+  --color-accent-hover: #ffffff;
+
+  /* Status colors */
+  --color-lost: #f87171;       /* red-400 - lost items */
+  --color-found: #4ade80;      /* green-400 - found items */
+  --color-recovered: #a78bfa;  /* violet-400 - recovered items */
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-base);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
