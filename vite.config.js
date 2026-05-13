@@ -4,18 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'fs'
 import { resolve } from 'path'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    {
-      name: 'copy-index-to-404',
-      closeBundle() {
-        fs.copyFileSync(
-          resolve(__dirname, 'dist/index.html'),
-          resolve(__dirname, 'dist/404.html')
-        )
-      }
+  plugins: [react(), tailwindcss(), {
+    name: 'copy-index-to-404',
+    closeBundle() {
+      fs.copyFileSync(
+        resolve(__dirname, 'dist/index.html'),
+        resolve(__dirname, 'dist/404.html')
+      )
     }
-  ],
+  }, cloudflare()],
 })
